@@ -1,5 +1,13 @@
 const functionSalesService = require('../services/salesService');
 
+// req 6
+const postSale = async (req, res) => {
+  const newSale = await functionSalesService.addNewSale(req.body);
+  console.log(newSale);
+  return res.status(201).json(newSale);
+};
+
+// req 8
 const getAllSalesControllers = async (_req, res) => {
   const sales = await functionSalesService.getAllSalesService();
 
@@ -14,6 +22,7 @@ const getSalesByIdController = async (req, res) => {
 };
 
 module.exports = {
+  postSale,
   getAllSalesControllers,
   getSalesByIdController,
 };
