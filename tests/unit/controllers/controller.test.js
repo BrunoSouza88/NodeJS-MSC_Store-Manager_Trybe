@@ -29,11 +29,6 @@ const mockOneProduct = {
   name: "Martelo de Thor",
 };
 
-const mockLastProduct = {
-  id: 4,
-  name: "Homem Passaro",
-};
-
 describe('', function () {
   this.afterEach(() => sinon.restore());
   it('', async function () {
