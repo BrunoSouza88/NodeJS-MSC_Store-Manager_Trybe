@@ -18,8 +18,15 @@ const getSalesByIdController = async (req, res) => {
   return res.status(200).json(saleById);
 };
 
+const deleteSalesController = async (req, res) => {
+  const { id } = req.params;
+  await functionSalesService.deleteSalesService(id);
+  return res.status(204).json();
+};
+
 module.exports = {
   postSale,
   getAllSalesControllers,
   getSalesByIdController,
+  deleteSalesController,
 };

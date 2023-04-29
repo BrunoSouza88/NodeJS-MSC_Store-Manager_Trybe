@@ -4,6 +4,7 @@ const {
   postSale,
   getAllSalesControllers,
   getSalesByIdController,
+  deleteSalesController,
 } = require('../controllers/salesControllers');
 
 const {
@@ -17,5 +18,7 @@ router.get('/sales', getAllSalesControllers);
 router.get('/sales/:id', validateSaleId, getSalesByIdController);
 
 router.post('/sales', validateProductQuantity, validateProductId, postSale);
+
+router.delete('/sales/:id', validateSaleId, deleteSalesController);
 
 module.exports = router;
