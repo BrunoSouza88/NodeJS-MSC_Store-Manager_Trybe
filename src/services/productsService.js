@@ -16,8 +16,15 @@ const createProductService = async (name) => {
   return { type: null, message: newProduct };
 };
 
+const updateProducService = async (productId, name) => {
+  const product = await functionModels.updateProducModels(productId, name);
+  console.log('service', product);
+  return product;
+};
+
 module.exports = {
   getAllService,
   getByIService,
   createProductService,
+  updateProducService,
 };

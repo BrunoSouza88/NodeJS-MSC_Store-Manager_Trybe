@@ -31,5 +31,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "ebf24376-7a1c-4b0f-bb7a-1073966c814a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3001/products Copy Copy",
+    "url": "http://localhost:3001/products/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-04-26T19:07:58.041Z",
+    "modified": "2023-04-29T19:14:28.748Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Loki\"\n}\n",
+      "form": []
+    },
+    "tests": []
   }
 ]

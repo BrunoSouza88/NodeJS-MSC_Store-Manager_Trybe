@@ -22,9 +22,23 @@ const createProductController = async (req, res) => {
 
   return res.status(201).json(result.message);
 };
+
+const updateProducController = async (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+
+  console.log('controller iD', typeof id);
+  console.log('controller name', name);
+  await functionService.updateProducService(id, name);
+  return res.status(200).json({
+    id: Number(id),
+    name,
+  });
+};
  
 module.exports = {
   getAllControllers,
   getByIdController,
   createProductController,
+  updateProducController,
 };
