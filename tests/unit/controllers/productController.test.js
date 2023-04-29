@@ -7,10 +7,10 @@ const productsController = require('../../../src/controllers/productsControllers
 const productsService = require('../../../src/services/productsService');
 const { mockAllProducts, mockOneProduct } = require('../models/mocks');
 
-describe('', function () {
-  afterEach(sinon.restore);
+describe('Testando Controller', function () {
+  afterEach(() => sinon.restore());
   
-  it('', async function () {
+  it('Retornando todos os produtos', async function () {
     sinon.stub(productsService, 'getAllService').resolves({ type: null, message: [mockAllProducts] });
     const res = {};
     const req = {};
@@ -23,7 +23,7 @@ describe('', function () {
     expect(res.status).to.have.been.calledWith(200);
     expect(res.json).to.have.been.calledWith([mockAllProducts]);
   })
-  it('', async function () {
+  it('Retornando um produto por ID', async function () {
     sinon.stub(productsService, 'getByIService').resolves([mockOneProduct]);
     const res = {};
     const req = {
