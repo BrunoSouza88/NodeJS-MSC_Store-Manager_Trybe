@@ -2,8 +2,7 @@ const functionSalesService = require('../services/salesService');
 
 // req 6
 const postSale = async (req, res) => {
-  const sale = req.body;
-  const newSale = await functionSalesService.addNewSale(sale);
+  const newSale = await functionSalesService.addNewSale(req.body);
   return res.status(201).json(newSale);
 };
 
