@@ -22,14 +22,23 @@ return { ...newSaleObj, itemsSold };
 // req 8
 const getAllSalesService = async () => {
   const sales = await functionSalesModels.getAllSalesModels();
-
-  return sales;
+  const result = sales.map((element) => ({
+    saleId: element.sale_id,
+    date: element.date,
+    quantity: element.quantity,
+    productId: element.product_id,
+  }));
+  return result;
 };
 
 const getSalesByIdService = async (salesId) => {
   const saleById = await functionSalesModels.getSalesByIdModels(salesId);
-  console.log('sales service', saleById);
-  return saleById;
+  const result = saleById.map((element) => ({
+    date: element.date,
+    quantity: element.quantity,
+    productId: element.product_id,
+  }));
+  return result;
 };
 
 module.exports = {

@@ -31,7 +31,17 @@ const validateProductQuantity = (req, res, next) => {
   next();
 };
 
+const validateSaleId = async (req, res, next) => {
+  const { id } = req.params;
+  const productById = await functionSalesModels.getByIdModels(id);
+  if (productById.length < 1) {
+    return res.status(404).json({ message: 'Sale not found' });
+  }
+  next();
+};
+
 module.exports = {
   validateProductId,
   validateProductQuantity,
+  validateSaleId,
 };

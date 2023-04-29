@@ -29,14 +29,21 @@ const insertTimeSale = () => {
 // req 8
 const getAllSalesModels = async () => {
   const [result] = await connection.execute(
-    'SELECT * FROM StoreManager.sales;',
+    `SELECT * 
+    FROM StoreManager.sales AS S 
+    INNER JOIN StoreManager.sales_products AS SP
+    ON S.id = SP.sale_id;`,
   );
   return result;
 };
 
 const getSalesByIdModels = async (saleId) => {
   const [result] = await connection.execute(
-    'SELECT * FROM StoreManager.sales_products WHERE sale_id = ? ORDER BY sale_id;',
+    `SELECT * 
+    FROM StoreManager.sales as S
+    INNER JOIN StoreManager.sales_products as SP
+    ON S.id = SP.sale_id
+    WHERE S.id = ?;`,
     [saleId],
   );
   return result;
