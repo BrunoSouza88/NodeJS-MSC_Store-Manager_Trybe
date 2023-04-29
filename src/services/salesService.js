@@ -3,13 +3,13 @@ const functionSalesModels = require('../models/salesModels');
 // req 6
 const addNewSale = async (fullSale) => {
   await functionSalesModels.insertTimeSale();
-  let lastSale = await functionSalesModels.getLastSaleById();
-  lastSale = Number(lastSale[0][0].id);
-  const newSaleObj = { id: lastSale + 1 };
+  const lastSale = await functionSalesModels.getLastSaleById();
+  const { id } = lastSale[0][0];
+  const newSaleObj = { id: id + 1 };
   const itemsSold = [];
   await Promise.all(
     fullSale.map(async (element) => {
-      await functionSalesModels.insertSale(element.productId, element.quantity, lastSale + 1);
+      await functionSalesModels.insertSale(element.productId, element.quantity, id + 1);
       itemsSold.push({
         productId: element.productId,
         quantity: element.quantity,
