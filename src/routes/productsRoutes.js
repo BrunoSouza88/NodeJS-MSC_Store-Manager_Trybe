@@ -5,6 +5,7 @@ const {
   getByIdController,
   createProductController,
   updateProducController,
+  deleteProductController,
 } = require('../controllers/productsControllers');
 
 const nameValidator = require('../middlewares/nameValidator');
@@ -15,6 +16,8 @@ router.get('/products', getAllControllers);
 router.get('/products/:id', getByIdController);
 
 router.put('/products/:id', nameValidator, productValidator, updateProducController);
+
+router.delete('/products/:id', productValidator, deleteProductController);
 
 router.post('/products', nameValidator, createProductController);
 

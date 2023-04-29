@@ -17,6 +17,7 @@ const getByIdController = async (req, res) => {
 const createProductController = async (req, res) => {
   const name = req.body;
   const result = await functionService.createProductService(name);
+
   if (result.type) return res.status(result.type).json(result.message);
   return res.status(201).json(result.message);
 };
@@ -31,10 +32,18 @@ const updateProducController = async (req, res) => {
     name,
   });
 };
+
+const deleteProductController = async (req, res) => {
+  const { id } = req.params;
+
+  await functionService.deleteProductService(id);
+  return res.status(204).json();
+};
  
 module.exports = {
   getAllControllers,
   getByIdController,
   createProductController,
   updateProducController,
+  deleteProductController,
 };

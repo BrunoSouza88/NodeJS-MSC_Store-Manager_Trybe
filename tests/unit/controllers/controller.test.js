@@ -58,7 +58,7 @@ describe('', function () {
     expect(res.status).to.have.been.calledWith(200);
   });
   it('', async function () {
-    sinon.stub(productService);
+    sinon.stub(productService, 'createProductService');
     let req = {};
     req.body = {
       name: "Martelo de Thor",
