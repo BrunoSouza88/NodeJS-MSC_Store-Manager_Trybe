@@ -11,7 +11,7 @@ describe('Testando Controller', function () {
   afterEach(() => sinon.restore());
   
   it('Retornando todos os produtos', async function () {
-    sinon.stub(productsService, 'getAllService').resolves({ type: null, message: [mockAllProducts] });
+    sinon.stub(productsService, 'getAllService').resolves([mockAllProducts]);
     const res = {};
     const req = {};
 
@@ -38,6 +38,6 @@ describe('Testando Controller', function () {
     await productsController.getByIdController(req, res);
 
     expect(res.status).to.have.been.calledWith(200);
-    expect(res.json).to.have.been.calledWith([mockOneProduct]);
+    expect(res.json).to.have.been.calledWith(mockOneProduct);
   })
 })
