@@ -18,11 +18,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3001/products Copy",
-    "url": "http://localhost:3001/products",
-    "method": "POST",
+    "url": "http://localhost:3001/sales/1",
+    "method": "DELETE",
     "sortNum": 0,
     "created": "2023-04-26T19:07:58.041Z",
-    "modified": "2023-04-27T19:07:55.727Z",
+    "modified": "2023-05-02T20:32:33.982Z",
     "headers": [],
     "params": [],
     "body": {
@@ -49,6 +49,20 @@
       "raw": "{\n  \"name\": \"Martelo do Loki\"\n}\n",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "feb616da-7aa7-4afe-9e62-bba785121790",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3001/products Copy",
+    "url": "http://localhost:3001/sales/1000",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-04-26T19:07:58.041Z",
+    "modified": "2023-05-02T19:27:42.287Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]
